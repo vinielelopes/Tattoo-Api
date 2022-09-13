@@ -1,4 +1,4 @@
-import {clientsList, clientSelectById, insertData, updateById, deleteById} from "../DAO/ClienteDAO.js"
+import { clientsList, clientSelectById, insertData, updateById, deleteById } from "../dao/ClienteDAO.js"
 
 export class Clients {
     constructor(client_id, name, contact, age, city){
