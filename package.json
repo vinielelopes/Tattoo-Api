@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "name": "tattoo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "homepage": "https://github.com/IplinskyLeo/tattooApi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "node": "^16.16.0",
+    "sqlite3": "^5.0.11"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/main.js",
+    "start": "node ./src/database/create-and-populate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IplinskyLeo/tattooApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }}

@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+node_modules
+=======
+/node_modules
+/.DS_Store
+./src/.DS_Store
+./src/data/.DS_Store
+>>>>>>> 17436d4b4f5ce7b3772405a9114fb2bea3505d74
