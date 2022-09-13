@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./routes/materiais.js";
+import router from "./src/routes/materiais.js";
 import { agendamentoRouter } from "./routes/agendamento.js";
 import cors from "cors";
 import clients from "./routes/cliente.js";
