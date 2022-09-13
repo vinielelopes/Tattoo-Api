@@ -8,7 +8,7 @@ import {
   findAgendamentoD,
   updateAgendamentoD,
   deleteAgendamentoD,
-} from "../DAO/AgendamentoDAO.js";
+} from "../dao/AgendamentoDAO.js";
 
 const createAgendamento = async (req, res) => {
   const { descricao, data, horario, tatuadorId, clientId, preco } = req.body;
