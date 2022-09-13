@@ -1,8 +1,8 @@
 import express from "express";
 import router from "./src/routes/materiais.js";
-import { agendamentoRouter } from "./routes/agendamento.js";
+import { agendamentoRouter } from "./src/routes/agendamento.js";
 import cors from "cors";
-import clients from "./routes/cliente.js";
+import clients from "./src/routes/cliente.js";
 
 const corsConfig = {
   origin: "*",
