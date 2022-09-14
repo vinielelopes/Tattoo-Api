@@ -7,7 +7,7 @@ import {
   deleteMaterialC,
 } from "../controllers/MateriaisController.js";
 
-const router = Router();
+const MateriaisRouter = Router();
 
 router.post("/Material", createMaterial);
 router.get("/Materials", findAllMaterials);
@@ -15,4 +15,4 @@ router.get("/Material/:id", findMaterial);
 router.put("/Material/:id", updateMaterialC);
 router.delete("/Material/:id", deleteMaterialC);
 
-export default router;
+export default MateriaisRouter;

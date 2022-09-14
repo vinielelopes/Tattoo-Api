@@ -1,8 +1,8 @@
 import express from "express";
-import router from "./src/routes/materiais.js";
+import router  from "./src/routes/cliente.js";
 import { agendamentoRouter } from "./src/routes/agendamento.js";
 import cors from "cors";
-import clients from "./src/routes/cliente.js";
+import materiaisRouter from "./src/routes/materiais.js";
 
 const corsConfig = {
   origin: "*",
@@ -13,14 +13,14 @@ const corsConfig = {
 
 const app = express();
 app.use(express.json(), cors(corsConfig));
-app.use(agendamentoRouter);
-app.use(router);
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
     res.status(200).send({ titulo: "Tattoo API" });
   });
-  app.use(clients);
+  app.use(materiaisRouter);
+  app.use(router);
+  app.use(agendamentoRouter);
 };
 
 routes(app);
