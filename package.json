@@ -1,27 +1,31 @@
 {
   "type": "module",
-  "name": "tattoo-api",
+  "name": "app",
   "version": "1.0.0",
-  "description": "",
-  "main": "./src/main.js",
-  "homepage": "https://github.com/IplinskyLeo/tattooApi#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "node": "^16.16.0",
-    "sqlite3": "^5.0.11"
-  },
+  "description": "Desenvolvimento da <em>**API REST**</em> no **padrão MVC** que retorna informações das entidades de um estúdio de tatuagem e efetua todas as operações **CRUD**: ``tatuador``, ``cliente``, ``agendamento``, ``materiais``.",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/main.js",
+    "dev": "nodemon ./index.js",
     "start": "node ./src/database/create-and-populate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IplinskyLeo/tattooApi.git"
+    "url": "git+https://github.com/vinielelopes/Tattoo-Api.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinielelopes/Tattoo-Api/issues"
+  },
+  "homepage": "https://github.com/vinielelopes/Tattoo-Api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "node": "^16.13.2",
+    "sqlite3": "^5.0.11"
+  },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }}
+  }
+}
