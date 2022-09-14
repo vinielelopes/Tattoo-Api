@@ -7,12 +7,12 @@ import {
   deleteMaterialC,
 } from "../controllers/MateriaisController.js";
 
-const MateriaisRouter = Router();
+const materiaisRouter = Router();
 
-router.post("/Material", createMaterial);
-router.get("/Materials", findAllMaterials);
-router.get("/Material/:id", findMaterial);
-router.put("/Material/:id", updateMaterialC);
-router.delete("/Material/:id", deleteMaterialC);
+materiaisRouter.post("/Material", createMaterial);
+materiaisRouter.get("/Materials", findAllMaterials);
+materiaisRouter.get("/Material/:id", findMaterial);
+materiaisRouter.put("/Material/:id", updateMaterialC);
+materiaisRouter.delete("/Material/:id", deleteMaterialC);
 
-export default MateriaisRouter;
+export default materiaisRouter;

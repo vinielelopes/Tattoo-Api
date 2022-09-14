@@ -5,7 +5,7 @@
   "description": "Desenvolvimento da <em>**API REST**</em> no **padrão MVC** que retorna informações das entidades de um estúdio de tatuagem e efetua todas as operações **CRUD**: ``tatuador``, ``cliente``, ``agendamento``, ``materiais``.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js",
+    "dev": "nodemon ./app.js",
     "start": "node ./src/database/create-and-populate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,9 +27,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  },
-  "engines": {
-    "node": "16.13.2"
   }
   
 }
