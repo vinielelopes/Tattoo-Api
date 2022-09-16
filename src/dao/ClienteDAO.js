@@ -16,7 +16,7 @@ const clientsList = () => {
 
 const insertData = (data) => {
     return new Promise((resolve, reject) => {
-        db.run(`INSERT INTO CLIENTS (client_id, name, contact, age, city) VALUES (?,?,?,?,?)`, Object.values(data), (error, rows) => {
+        db.run(`INSERT INTO CLIENTS (id, name, contact, age, city) VALUES (?,?,?,?,?)`, Object.values(data), (error, rows) => {
             if (error) {
                 reject(error)
             } 
@@ -33,7 +33,7 @@ const insertData = (data) => {
 
 const clientSelectById = (id) => {
     return new Promise((resolve, reject) => {
-      db.all(`SELECT * FROM CLIENTS WHERE client_id = ?`, [id],  (erro, rows) => {
+      db.all(`SELECT * FROM CLIENTS WHERE id = ?`, [id],  (erro, rows) => {
         if (erro) {
           reject(erro.message);
         } else {
@@ -43,9 +43,9 @@ const clientSelectById = (id) => {
     });
   };
   
-const updateById = (newClient, client_id) => {
+const updateById = (newClient, id) => {
     return new Promise( (resolve, reject) => {
-        db.run( `UPDATE CLIENTS SET name = ?, contact = ?, age = ?, city = ? WHERE client_id = ${client_id}`, Object.values(newClient), (error) => {
+        db.run( `UPDATE CLIENTS SET name = ?, contact = ?, age = ?, city = ? WHERE id = ${id}`, Object.values(newClient), (error) => {
                 if(error) {
                     reject(error)
                 } else {
@@ -58,7 +58,7 @@ const updateById = (newClient, client_id) => {
 
 const deleteById = (id) => {
     return new Promise((resolve, reject) => {
-      db.run(`DELETE FROM CLIENTS WHERE client_id = ?`, id, (erro) => {
+      db.run(`DELETE FROM CLIENTS WHERE id = ?`, id, (erro) => {
         if (erro) {
           reject(erro.message);
         } else {

@@ -1,8 +1,8 @@
 import { clientsList, clientSelectById, insertData, updateById, deleteById } from "../dao/ClienteDAO.js"
 
 export class Clients {
-    constructor(client_id, name, contact, age, city){
-        this.client_id = client_id;
+    constructor(id, name, contact, age, city){
+        this.id = id;
         this.name = name;
         this.contact = contact;
         this.age = age;
