@@ -6,11 +6,11 @@ const db = new sqlite3.Database("./src/database/database.db");
 const createTable = () => {
   db.run(
     `CREATE TABLE IF NOT EXISTS MATERIAL (
-        id INTEGER PRIMARY KEY,
-        fornecedor VARCHAR(100),
-        produto VARCHAR(100),
-        quantidade VARCHAR(100),
-        valor INTEGER
+        "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "FORNECEDOR" VARCHAR(100),
+        "PRODUTO" VARCHAR(100),
+        "QUANTIDADE" VARCHAR(100),
+        "VALOR" INTEGER
         )`,
     (err) => {
       if (err) {
@@ -24,7 +24,7 @@ const createTable = () => {
 
 const populateTable = () => {
   db.run(
-    `INSERT INTO MATERIAL (id, fornecedor, produto, quantidade, valor) VALUES
+    `INSERT INTO MATERIAL (ID, FORNECEDOR, PRODUTO, QUANTIDADE, VALOR) VALUES
     (1, 'Trixxy', 'caneta rotativa T3100','5',350),
     (2, 'Master Agulhas', 'agulha de cobre','10',10),
     (3, 'Pro Cleanings', 'kit higienizador premium','150',30),
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS "AGENDAMENTO" (
   "CLIENTE_ID" INTEGER,
   "PRECO" DECIMAL,
   FOREIGN KEY(TATUADOR_ID) REFERENCES TATUADOR(ID),
-  FOREIGN KEY(CLIENTE_ID) REFERENCES CLIENTS(CLIENT_ID)
+  FOREIGN KEY(CLIENTE_ID) REFERENCES CLIENTS(ID)
   )`;
 
 const ADD_AGENDAMENTO_DATA = `
@@ -77,7 +77,7 @@ function populateTableAgendamento() {
 
 const CLIENTS_SCHEMA = `
 CREATE TABLE IF NOT EXISTS "CLIENTS" (
-    "CLIENT_ID" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
     "NAME" varchar(64),
     "CONTACT" varchar(100),
     "AGE" INT,
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS "CLIENTS" (
 );`;
 
 const ADD_CLIENTS_DATA = `
-INSERT INTO CLIENTS (client_id, name, contact, age, city)
+INSERT INTO CLIENTS (ID, NAME, CONTACT, AGE, CITY)
 VALUES 
     (1, 'Luiza da Silva Pereira', '(21) 98708-7261', '18', 'Rio de Janeiro'),
     (2, 'Lucas Nascimento de Sousa', '(88) 97431-0987', '25', 'Fortaleza'),
