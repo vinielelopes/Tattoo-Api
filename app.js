@@ -2,6 +2,7 @@ import express from "express";
 import router  from "./src/routes/cliente.js";
 import { agendamentoRouter } from "./src/routes/agendamento.js";
 import cors from "cors";
+import tatuadorRouter from "./src/routes/tatuador.js";
 import materiaisRouter from "./src/routes/materiais.js";
 
 const corsConfig = {
@@ -18,6 +19,7 @@ const routes = (app) => {
   app.route("/").get((req, res) => {
     res.status(200).send({ titulo: "Tattoo API" });
   });
+  app.use(tatuadorRouter);
   app.use(materiaisRouter);
   app.use(router);
   app.use(agendamentoRouter);

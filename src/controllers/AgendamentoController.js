@@ -1,6 +1,6 @@
 import AgendamentoModel from "../models/AgendamentoModel.js";
 
-// import { selectTatuador } from "../models/TatuadorModel.js";
+import { selectTatuador } from "../models/TatuadorModel.js";
 
 import {
   findAllAgendamentosD,
@@ -12,14 +12,14 @@ import {
 
 const createAgendamento = async (req, res) => {
   const { descricao, data, horario, tatuadorId, clientId, preco } = req.body;
-  // const { id } = req.params;
+   const { id } = req.params;
 
   try {
-    // let tatuador = await selectTatuador(id);
+     let tatuador = await selectTatuador(id);
 
-    // if (!tatuador) {
-    //   return res.json({ message: "Tatuador inexistente!" });
-    // }
+      if (!tatuador) {
+       return res.json({ message: "Tatuador inexistente!" });
+     }
 
     const Agendamentos = await createAgendamentoD(req.body);
     res.status(200).json({

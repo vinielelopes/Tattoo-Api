@@ -1,19 +1,18 @@
-import { clientsList, clientSelectById, insertData, updateById, deleteById } from "../dao/ClienteDAO.js"
+import {TatuadorList, tatuadorSelectById, insertData, updateById, deleteById} from "../DAO/TatuadorDAO.js"
 
-export class Clients {
-    constructor(id, name, contact, age, city){
-        this.id = id;
+export class Tatuador {
+    constructor(tatuador_id, name, contact, availability){
+        this.tatuador_id = tatuador_id;
         this.name = name;
         this.contact = contact;
-        this.age = age;
-        this.city = city;
+        this.availability  = availability;
     }
 }
 
-export const getClients = async () => {
+export const getTatuador = async () => {
     try {
-        const data = await clientsList();
-        if (!data) throw new Error("Não foi possível encontrar os clientes!")
+        const data = await TatuadorList();
+        if (!data) throw new Error("Não foi possível encontrar os tatuadores!")
         return data
     } catch (error) {
         throw error
@@ -22,8 +21,8 @@ export const getClients = async () => {
 
 export const selectData = async (id) => {
     try {
-        const data = await clientSelectById(id);
-        if (!data) throw new Error("Não foi possível encontrar os clientes!")
+        const data = await tatuadorSelectById(id);
+        if (!data) throw new Error("Não foi possível encontrar os tatuadores!")
         return data
     } catch (error) {
         throw error
@@ -40,9 +39,9 @@ export const insertD = async (data) => {
     }
 }
 
-export const updateD = async (newClient, id) => {
+export const updateD = async (newtatuador, tatuador_id) => {
     try {
-        const data = await updateById (newClient, id)
+        const data = await updateById (newtatuador, tatuador_id)
         if(!data) throw new Error("Não foi possível atualizar!")
         return data
     } catch (error) {
@@ -53,8 +52,8 @@ export const updateD = async (newClient, id) => {
 export const deleteD = async (id) => {
     try {
         const clients = await deleteById(id);
-        if (!clients) throw new Error("Can not delete client");
-        return clients;
+        if (!clients) throw new Error("Can not delete tatuador");
+        return Tatuador;
   } catch (error) {
     throw error;
   }
