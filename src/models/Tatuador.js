@@ -1,4 +1,4 @@
-import {TatuadorList, tatuadorSelectById, insertData, updateById, deleteById} from "../DAO/TatuadorDAO.js"
+import {TatuadorList, tatuadorSelectById, insertData, updateById, deleteById} from "../dao/TatuadorDAO.js"
 
 export class Tatuador {
     constructor(tatuador_id, name, contact, availability){
