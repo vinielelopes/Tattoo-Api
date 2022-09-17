@@ -21,7 +21,14 @@ const createAgendamento = async (req, res) => {
        return res.json({ message: "Tatuador inexistente!" });
      }
 
-    const Agendamentos = await createAgendamentoD(req.body);
+    const Agendamentos = await createAgendamentoD({
+      descricao: descricao,
+      data: data,
+      horario: horario, 
+      tatuadorId: id,
+      clienteId: clientId,
+      preco: preco
+    });
     res.status(200).json({
       Agendamentos,
     });
