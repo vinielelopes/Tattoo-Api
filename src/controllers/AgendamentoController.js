@@ -1,6 +1,6 @@
 import AgendamentoModel from "../models/AgendamentoModel.js";
 
-import  selectData  from "../models/Tatuador.js";
+import { selectData }   from "../models/Tatuador.js";
 
 import {
   findAllAgendamentosD,
