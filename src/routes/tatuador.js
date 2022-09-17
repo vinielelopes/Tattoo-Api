@@ -4,7 +4,7 @@ import { tatuadorList, tatuadorSelectById, updateData, deleteData, insertData  }
 const tatuadorRouter = express.Router();
 
 
-router
+tatuadorRouter
     .get("/tatuador", tatuadorList)
     .get("/tatuador/:id", tatuadorSelectById)
     .put("/tatuador/:id", updateData)
