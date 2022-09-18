@@ -53,7 +53,7 @@ export const updateData = async (req, res) => {
  }
 
 export const insertData = async (req, res) => {
-     const { client_id, name, contact, age, city } = req.body;
+     const { name, contact, age, city } = req.body;
    
      try {
        const newData = await insertD(req.body);

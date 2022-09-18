@@ -5,7 +5,7 @@ import AgendamentoController from "../controllers/AgendamentoController.js";
 const agendamentoRouter = Router();
 
 
-agendamentoRouter.post("/agendamento/tatuador/:id", AgendamentoController.createAgendamento);
+agendamentoRouter.post("/agendamento/:id/idCliente", AgendamentoController.createAgendamento);
 
 agendamentoRouter.get(
   "/agendamentos",

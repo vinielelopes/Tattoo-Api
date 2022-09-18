@@ -2,6 +2,8 @@ import AgendamentoModel from "../models/AgendamentoModel.js";
 
 import { selectData }   from "../models/Tatuador.js";
 
+import { selectData as selectDataCliente} from "../models/ClienteModel.js";
+
 import {
   findAllAgendamentosD,
   createAgendamentoD,
@@ -12,13 +14,15 @@ import {
 
 const createAgendamento = async (req, res) => {
   const { descricao, data, horario, tatuadorId, clientId, preco } = req.body;
+  const { idCliente } = req.params;
    const { id } = req.params;
 
   try {
      let tatuador = await selectData(id);
+     let cliente = await selectDataCliente(idCliente);
 
-      if (!tatuador) {
-       return res.json({ message: "Tatuador inexistente!" });
+      if (!tatuador || !cliente) {
+       return res.json({ message: "Agendamento inválido!" });
      }
 
     const Agendamentos = await createAgendamentoD({
