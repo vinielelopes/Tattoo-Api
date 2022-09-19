@@ -30,7 +30,7 @@ const createAgendamento = async (req, res) => {
       data: data,
       horario: horario, 
       tatuadorId: id,
-      clienteId: clientId,
+      clienteId: idCliente,
       preco: preco
     });
     res.status(200).json({
